@@ -52,27 +52,60 @@ const deities = [
 ];
 
 const weekdayNames = ["ఆదివారం","సోమవారం","మంగళవారం","బుధవారం","గురువారం","శుక్రవారం","శనివారం"];
-const teluguMonths = ["జనవరి","ఫిబ్రవరి","మార్చి","ఏప్రిల్","మే","జూన్","జూలై","ఆగస్టు","సెప్టెంబర్","అక్టోబర్","నవంబర్","డిసెంబర్"];
+const monthNamesTe = ["జనవరి","ఫిబ్రవరి","మార్చి","ఏప్రిల్","మే","జూన్","జూలై","ఆగస్టు","సెప్టెంబర్","అక్టోబర్","నవంబర్","డిసెంబర్"];
+const weekdayShortTe = ["ఆది","సోమ","మంగళ","బుధ","గురు","శుక్ర","శని"];
+
+// SAMPLE VALUES copied from the design mockup. Replace with a verified panchangam source before production.
+const panchang = [
+  { cls: "pink", icon: "☾", label: "తిథి", value: "శుక్ల పంచమి", until: "(రా. 10:24 వరకు)" },
+  { cls: "blue", icon: "✷", label: "నక్షత్రం", value: "రోహిణి", until: "(సా. 04:32 వరకు)" },
+  { cls: "green", icon: "☀", label: "యోగం", value: "శోభన", until: "(రా. 03:15 వరకు)" },
+  { cls: "violet", icon: "⌀", label: "కరణం", value: "బవ", until: "(రా. 10:24 వరకు)" }
+];
+const muhurtas = [
+  ["🌅", "బ్రహ్మ ముహూర్తం", "04:51 AM - 05:43 AM"], ["✺", "అభిజిత్ ముహూర్తం", "11:48 AM - 12:36 PM"],
+  ["✺", "విజయ ముహూర్తం", "01:57 PM - 02:45 PM"], ["◷", "గురు ముహూర్తం", "04:20 PM - 05:08 PM"],
+  ["◷", "రాహుకాలం", "09:06 AM - 10:38 AM"], ["ॐ", "యమగండం", "01:50 PM - 03:22 PM"],
+  ["ॐ", "గుళిక కాలం", "06:19 AM - 07:51 AM"], ["✹", "దుర్ముహూర్తం", "08:12 AM - 09:00 AM"],
+  ["❂", "వర్జ్యం", "03:15 PM - 04:58 PM"]
+];
+const festivals = [
+  { y: 2026, m: 9, d: 2, name: "గాంధీ జయంతి" }, { y: 2026, m: 9, d: 12, name: "దసరా (మహానవమి)" },
+  { y: 2026, m: 9, d: 17, name: "విజయదశమి" }, { y: 2026, m: 9, d: 24, name: "కార్తీక దీపం (ప్రారంభం)" },
+  { y: 2026, m: 9, d: 31, name: "దీపావళి" }
+];
 
 function getTodayDeity(date = new Date()) {
   return deities.find(item => item.day === date.getDay()) || deities[0];
 }
 
+function el(tag, className, html) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (html !== undefined) node.innerHTML = html;
+  return node;
+}
+
+function artBlock(deity, cls) {
+  return `<div class="${cls}"><span class="image-fallback" aria-hidden="true">${deity.symbol}</span><img src="${deity.image}" alt="${deity.alt}" loading="lazy" /></div>`;
+}
+
 function createDeityCard(deity) {
-  const article = document.createElement("article");
-  article.className = "deity-card";
-  const button = document.createElement("button");
+  const article = el("article", `deity-card day-${deity.day}`);
+  const button = el("button");
   button.type = "button";
   button.setAttribute("aria-label", `${deity.weekday}: ${deity.god} స్తోత్రం చూడండి`);
+  const lines = deity.stotram.split("\n");
   button.innerHTML = `
-    <div class="deity-image-wrap"><img src="${deity.image}" alt="${deity.alt}" loading="lazy" /><span class="image-fallback" aria-hidden="true">${deity.symbol}</span></div>
-    <div class="deity-card-copy">
-      <span class="weekday">${deity.weekday}</span>
-      <h3>${deity.god}</h3>
-      <span class="short-prayer">${deity.stotram.split("\n")[0]}</span>
-      <span class="select-hint">స్తోత్రం చూడటానికి తాకండి ↗</span>
-    </div>`;
-  button.addEventListener("click", () => renderFeatured(deity));
+    <h3 class="weekday">${deity.weekday}</h3>
+    ${artBlock(deity, "deity-image-wrap")}
+    <span class="god-name">${deity.shortName}</span>
+    <span class="short-prayer">${lines[0]}<br>${lines[1] || ""}</span>
+    <span class="play-pill">▶ స్తోత్రం చూడండి</span>`;
+  button.addEventListener("click", () => {
+    renderFeatured(deity);
+    document.getElementById("daily-god").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   article.append(button);
   return article;
 }
@@ -80,27 +113,22 @@ function createDeityCard(deity) {
 function renderFeatured(deity) {
   const root = document.getElementById("featured-deity");
   root.innerHTML = `
-    <div class="deity-art"><img src="${deity.image}" alt="${deity.alt}" /><span class="image-fallback" aria-hidden="true">${deity.symbol}</span></div>
+    ${artBlock(deity, "deity-art")}
     <div class="deity-copy">
-      <p class="eyebrow">${deity.weekday} ప్రత్యేకం</p>
+      <p class="weekday-label">${deity.weekday}</p>
       <h3>${deity.god}</h3>
-      <p class="muted">చిన్న స్తోత్రం</p>
+      <span class="blessing-badge">స్వామివారి అనుగ్రహం</span>
       <div class="sanskrit"></div>
       <p class="meaning"></p>
     </div>`;
   root.querySelector(".sanskrit").textContent = deity.stotram;
   root.querySelector(".meaning").textContent = `భావం: ${deity.meaning}`;
   wireImageFallbacks(root);
-  document.getElementById("today-deity-label").textContent = deity.shortName;
 }
 
 function wireImageFallbacks(scope = document) {
   scope.querySelectorAll("img").forEach(img => {
-    img.addEventListener("error", () => {
-      img.style.display = "none";
-      const fallback = img.parentElement.querySelector(".image-fallback");
-      if (fallback) fallback.classList.add("is-visible");
-    }, { once: true });
+    img.addEventListener("error", () => { img.style.display = "none"; }, { once: true });
     if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event("error"));
   });
 }
@@ -108,43 +136,61 @@ function wireImageFallbacks(scope = document) {
 function renderDate() {
   const now = new Date();
   document.getElementById("today-date").textContent =
-    `${now.getDate()} ${teluguMonths[now.getMonth()]} ${now.getFullYear()}`;
-  document.getElementById("today-day").textContent = weekdayNames[now.getDay()];
+    `${now.getDate()} ${monthNamesTe[now.getMonth()]} ${now.getFullYear()}, ${weekdayNames[now.getDay()]}`;
 }
 
-function init() {
-  renderDate();
-  const todayDeity = getTodayDeity();
-  renderFeatured(todayDeity);
-  const grid = document.getElementById("deity-grid");
-  deities.slice().sort((a, b) => (a.day === 0 ? 7 : a.day) - (b.day === 0 ? 7 : b.day))
-    .forEach(deity => grid.append(createDeityCard(deity)));
-  wireImageFallbacks(grid);
+function renderPanchang() {
+  const root = document.getElementById("panchang-summary");
+  panchang.forEach(p => root.append(el("article", `p-card ${p.cls}`,
+    `<span class="p-icon" aria-hidden="true">${p.icon}</span><h3>${p.label}</h3><strong>${p.value}</strong><small>${p.until}</small>`)));
 }
 
-document.addEventListener("DOMContentLoaded", init);
+function renderMuhurtas() {
+  const root = document.getElementById("muhurta-list");
+  muhurtas.forEach(([icon, name, time]) => root.append(el("li", "", `<span aria-hidden="true">${icon}</span><b>${name}</b><time>${time}</time>`)));
+}
 
-/* Accessible month grid with reusable calendar renderer. */
-const monthNamesTe = ["జనవరి","ఫిబ్రవరి","మార్చి","ఏప్రిల్","మే","జూన్","జూలై","ఆగస్టు","సెప్టెంబర్","అక్టోబర్","నవంబర్","డిసెంబర్"];
-const weekdayShortTe = ["ఆది","సోమ","మంగళ","బుధ","గురు","శుక్ర","శని"];
+function renderFestivals() {
+  const root = document.getElementById("festival-list");
+  const now = new Date();
+  festivals.forEach(f => {
+    const today = f.y === now.getFullYear() && f.m === now.getMonth() && f.d === now.getDate();
+    root.append(el("li", today ? "festival-today" : "",
+      `<time>${String(f.d).padStart(2, "0")} ${monthNamesTe[f.m]}</time><b>${f.name}</b><span aria-hidden="true">›</span>`));
+  });
+}
+
 let calendarMonth = new Date();
 function renderMonthCalendar() {
   const grid = document.getElementById("month-calendar");
   const label = document.getElementById("month-label");
-  if (!grid || !label) return;
-  label.textContent = monthNamesTe[calendarMonth.getMonth()] + " " + calendarMonth.getFullYear();
+  const y = calendarMonth.getFullYear(), m = calendarMonth.getMonth();
+  label.textContent = `${monthNamesTe[m]} ${y}`;
   grid.innerHTML = "";
-  weekdayShortTe.forEach(day => { const cell=document.createElement("span"); cell.className="weekday-head"; cell.textContent=day; grid.append(cell); });
-  const first = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth(), 1).getDay();
-  const total = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth()+1, 0).getDate();
-  for(let i=0;i<first;i++){const blank=document.createElement("span");blank.setAttribute("aria-hidden","true");grid.append(blank);}
+  weekdayShortTe.forEach(day => grid.append(el("b", "weekday-head", day)));
+  for (let i = 0, first = new Date(y, m, 1).getDay(); i < first; i++) grid.append(el("span"));
   const now = new Date();
-  for(let day=1;day<=total;day++){
-    const cell=document.createElement("span"); cell.textContent=String(day);
-    if(day===now.getDate() && calendarMonth.getMonth()===now.getMonth() && calendarMonth.getFullYear()===now.getFullYear()) { cell.className="today"; cell.setAttribute("aria-current","date"); }
+  for (let day = 1, total = new Date(y, m + 1, 0).getDate(); day <= total; day++) {
+    const isToday = day === now.getDate() && m === now.getMonth() && y === now.getFullYear();
+    const hasFest = festivals.some(f => f.y === y && f.m === m && f.d === day);
+    const cell = el("span", hasFest ? "has-festival" : "", isToday ? `<em class="today">${day}</em>` : String(day));
+    if (isToday) cell.setAttribute("aria-current", "date");
     grid.append(cell);
   }
 }
-document.getElementById("prev-month")?.addEventListener("click",()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()-1,1);renderMonthCalendar();});
-document.getElementById("next-month")?.addEventListener("click",()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,1);renderMonthCalendar();});
-document.addEventListener("DOMContentLoaded",renderMonthCalendar);
+
+function init() {
+  renderDate();
+  renderPanchang();
+  renderMuhurtas();
+  renderFestivals();
+  renderFeatured(getTodayDeity());
+  const grid = document.getElementById("deity-grid");
+  deities.slice().sort((a, b) => a.day - b.day).forEach(deity => grid.append(createDeityCard(deity)));
+  wireImageFallbacks(grid);
+  renderMonthCalendar();
+  document.getElementById("prev-month").addEventListener("click", () => { calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1); renderMonthCalendar(); });
+  document.getElementById("next-month").addEventListener("click", () => { calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1); renderMonthCalendar(); });
+}
+
+document.addEventListener("DOMContentLoaded", init);
