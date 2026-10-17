@@ -283,3 +283,46 @@ footer { background: linear-gradient(100deg, #3c0e15, #701a25, #3c0e15); }
 @media (max-width: 480px) {
   .hero::after { inset: 8px; padding-top: 7px; font-size: .8rem; }
 }
+
+
+/* Responsive QA fixes based on the actual GitHub Pages phone screenshot. */
+.round-icon {
+  background: linear-gradient(145deg, #8b202c, #5b121d);
+  color: #fff0c6;
+  border: 1px solid #d3a84e;
+  box-shadow: 0 2px 7px rgba(77, 18, 27, .16);
+}
+@media (max-width: 900px) {
+  .container { width: min(100% - 24px, 720px); }
+  .panchang-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-deity { grid-template-columns: 1fr; }
+  .deity-art { min-height: 0; max-height: none; }
+  .deity-art img { min-height: 0; height: clamp(240px, 54vw, 380px); object-fit: cover; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .deity-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .nav { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+  .nav a { flex: 0 0 auto; white-space: nowrap; }
+}
+@media (max-width: 560px) {
+  .container { width: calc(100% - 20px); margin-top: 10px; }
+  .hero { min-height: 205px; }
+  .hero-overlay { padding: 34px 20px; }
+  .hero h1 { font-size: clamp(1.65rem, 7vw, 2.25rem); }
+  .date-strip { padding: 15px; }
+  .date-strip h2 { font-size: 1.2rem; }
+  .panchang-summary { gap: 8px; }
+  .summary-tile { min-height: 118px; padding: 10px 7px; }
+  .summary-tile small { font-size: .72rem; }
+  .section { padding: 14px; margin-top: 14px; }
+  .featured-deity { grid-template-columns: 1fr; }
+  .deity-art img { height: 270px; }
+  .deity-copy { padding: 16px; }
+  .deity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .deity-card img, .deity-image-wrap { height: 130px; }
+  .deity-card-copy { padding: 10px; }
+  .panchang-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .info-card { padding: 11px; gap: 9px; }
+  .muhurta-list > div { flex-wrap: wrap; gap: 7px; }
+  .muhurta-list time { margin-left: auto; }
+  .month-head h2 { font-size: 1.05rem; }
+}
