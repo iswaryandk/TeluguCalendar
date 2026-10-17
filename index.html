@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#7b1524" />
+  <meta name="theme-color" content="#741824" />
   <title>శ్రీ తెలుగు పంచాంగం</title>
   <meta name="description" content="తెలుగు పంచాంగం, వారానికి ఒక దేవత, చిన్న స్తోత్రాలు మరియు పండుగలు." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
     <div class="hero-overlay">
       <p class="eyebrow">ఓం నమో నారాయణాయ</p>
       <h1>శ్రీ తెలుగు పంచాంగం</h1>
-      <p class="hero-subtitle">దిన పంచాంగం · దైవ దర్శనం · స్తోత్రాలు · పండుగలు</p>
+      <p class="hero-subtitle">ధర్మం　|　సంస్కారం　|　సనాతన సంప్రదాయం</p>
     </div>
   </header>
 
@@ -24,87 +24,93 @@
     <a href="#today">⌂ హోమ్</a>
     <a href="#panchangam">▦ క్యాలెండర్</a>
     <a href="#daily-god">♧ పంచాంగం</a>
-    <a href="#festivals">♙ పండుగలు & ముహూర్తాలు</a>
+    <a href="#festivals">♙ పండుగలు & వ్రతాలు</a>
     <a href="#muhurthas">♜ దేవాలయాలు</a>
-    <a href="#deity-grid">✺ మంత్రాలు</a>
+    <a href="#deity-grid">✺ ముహూర్తాలు</a>
     <a href="#quote">ⓘ సమాచారం</a>
   </nav>
 
   <main class="container">
     <section class="date-strip" id="today">
-      <div>
+      <div class="date-symbol" aria-hidden="true">▦</div>
+      <div class="date-main">
         <p class="eyebrow">ఈ రోజు</p>
         <h2 id="today-date">తేదీ లోడ్ అవుతోంది…</h2>
         <p class="muted" id="today-day"></p>
       </div>
-      <div class="om-mark" aria-hidden="true">ॐ</div>
+      <div class="date-divider"></div>
+      <div class="daily-blessing"><span class="lotus">❋</span><div><strong>శుభోదయం</strong><small>శ్రీ వేంకటేశాయ నమః</small></div></div>
     </section>
 
     <section class="panchang-summary" aria-label="పంచాంగ సారాంశం">
-      <article class="summary-tile pink"><span class="round-icon">☾</span><h3>తిథి</h3><strong>శుక్ల పంచమి</strong><small>తిథి వివరాలు స్థానికంగా నిర్ధారించండి</small></article>
-      <article class="summary-tile blue"><span class="round-icon">✹</span><h3>నక్షత్రం</h3><strong>రోహిణి</strong><small>నక్షత్ర సమయం పంచాంగానుసారం</small></article>
-      <article class="summary-tile green"><span class="round-icon">☼</span><h3>యోగం</h3><strong>శోభన</strong><small>స్థానిక గణన అవసరం</small></article>
-      <article class="summary-tile violet"><span class="round-icon">◐</span><h3>కరణం</h3><strong>బవ</strong><small>తిథి ఆధారిత వివరాలు</small></article>
-    </section>
-    <section id="daily-god" class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">భక్తి ప్రత్యేకం</p>
-          <h2>ఈ రోజు వారపు దైవం</h2>
-        </div>
-        <span class="pill" id="today-deity-label">దైవ దర్శనం</span>
-      </div>
-      <div id="featured-deity" class="featured-deity"></div>
+      <article class="summary-tile pink"><span class="round-icon">☾</span><h3>తిథి</h3><strong>శుక్ల పంచమి</strong><small>స్థానిక పంచాంగంతో నిర్ధారించండి</small></article>
+      <article class="summary-tile blue"><span class="round-icon">✹</span><h3>నక్షత్రం</h3><strong>రోహిణి</strong><small>స్థానిక పంచాంగంతో నిర్ధారించండి</small></article>
+      <article class="summary-tile green"><span class="round-icon">☼</span><h3>యోగం</h3><strong>శోభన</strong><small>స్థానిక పంచాంగంతో నిర్ధారించండి</small></article>
+      <article class="summary-tile violet"><span class="round-icon">◐</span><h3>కరణం</h3><strong>బవ</strong><small>స్థానిక పంచాంగంతో నిర్ధారించండి</small></article>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">ఏ రోజు అయినా ఎంచుకోండి</p>
-          <h2>వారంలోని ఏడు దైవాలు</h2>
+    <div class="dashboard-grid">
+      <section class="section featured-panel" id="daily-god">
+        <div class="panel-title maroon-title"><span>ॐ</span><h2>ఈరోజు ఆరాధ్య దేవత</h2></div>
+        <div class="featured-inner">
+          <div id="featured-deity" class="featured-deity"></div>
         </div>
-      </div>
-      <div id="deity-grid" class="deity-grid"></div>
-    </section>
+      </section>
 
-    <div class="dashboard-grid"><section class="section" id="panchangam">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">రోజువారీ వివరాలు</p>
-          <h2>పంచాంగం</h2>
+      <section class="section muhurta-panel" id="muhurthas">
+        <div class="panel-title gold-title"><span>♧</span><h2>నేటి శుభ ముహూర్తాలు</h2></div>
+        <div class="muhurta-list">
+          <div><span>☀</span><b>బ్రహ్మ ముహూర్తం</b><time>04:51 AM – 05:43 AM</time></div>
+          <div><span>✺</span><b>అభిజిత్ ముహూర్తం</b><time>11:48 AM – 12:36 PM</time></div>
+          <div><span>✺</span><b>విజయ ముహూర్తం</b><time>01:57 PM – 02:45 PM</time></div>
+          <div><span>☼</span><b>గోధూళి ముహూర్తం</b><time>04:20 PM – 05:08 PM</time></div>
+          <div><span>✿</span><b>రాహుకాలం</b><time>స్థానికంగా గణించాలి</time></div>
+          <p class="notice">సమయాలు నమూనా ప్రదర్శన మాత్రమే; మీ నగరం, తేదీకి అనుగుణంగా నిర్ధారించండి.</p>
         </div>
+      </section>
+
+      <section class="section month-panel" id="panchangam">
+        <div class="panel-title maroon-title month-title"><button id="prev-month" aria-label="గత నెల">‹</button><h2 id="month-label">అక్టోబర్ 2026</h2><button id="next-month" aria-label="తదుపరి నెల">›</button></div>
+        <div id="month-calendar" class="month-calendar"></div>
+        <a class="month-link" href="#festivals">▦ ఈ నెల పండుగలు & ముఖ్య తేదీలు　›</a>
+      </section>
+
+      <div class="right-lower">
+        <section class="section festival-panel" id="festivals">
+          <div class="panel-title green-title"><span>♧</span><h2>పండుగలు & వ్రతాలు</h2></div>
+          <div class="festival-rows">
+            <div><span>🌼</span><time>02 అక్టోబర్</time><b>గాంధీ జయంతి</b><span>›</span></div>
+            <div><span>🪷</span><time>12 అక్టోబర్</time><b>దసరా (మహానవమి)</b><span>›</span></div>
+            <div class="festival-today"><span>🪷</span><time>17 అక్టోబర్</time><b>విజయదశమి</b><span>›</span></div>
+            <div><span>🪔</span><time>24 అక్టోబర్</time><b>శరద్ పౌర్ణమి</b><span>›</span></div>
+            <div><span>🪔</span><time>31 అక్టోబర్</time><b>దీపావళి</b><span>›</span></div>
+          </div>
+        </section>
+        <section class="section quote-panel" id="quote">
+          <div class="panel-title maroon-title"><span>◷</span><h2>ప్రత్యేక సూచనలు</h2></div>
+          <div class="quote-content"><span>❋</span><p>ఈ రోజు మీ మనస్సును ప్రశాంతంగా ఉంచి, మంచి ఆలోచనలతో పనులు ప్రారంభించండి.</p></div>
+        </section>
       </div>
-      <div class="notice">గమనిక: కింది సమయాలు నమూనా సమాచారం మాత్రమే. ఖచ్చితమైన తిథి, నక్షత్రం, రాహుకాలం వంటి వివరాలకు తేదీ మరియు మీ నగరానికి అనుగుణంగా పంచాంగ గణనలను అనుసంధానించాలి.</div>
+    </div>
+
+    <section class="section panchang-detail" aria-labelledby="panchang-detail-title">
+      <div class="section-heading"><div><p class="eyebrow">రోజువారీ వివరాలు</p><h2 id="panchang-detail-title">పంచాంగ వివరాలు</h2></div></div>
+      <div class="notice">గమనిక: ఖచ్చితమైన తిథి, నక్షత్రం, రాహుకాలం వంటి వివరాలకు తేదీ మరియు మీ నగరానికి అనుగుణంగా పంచాంగ గణనలను అనుసంధానించాలి.</div>
       <div class="panchang-grid">
         <article class="info-card"><span>☀</span><div><h3>సూర్యోదయం</h3><p>స్థానిక గణన అవసరం</p></div></article>
         <article class="info-card"><span>☾</span><div><h3>సూర్యాస్తమయం</h3><p>స్థానిక గణన అవసరం</p></div></article>
-        <article class="info-card"><span>✦</span><div><h3>తిథి</h3><p>పంచాంగ API / గణన జోడించాలి</p></div></article>
-        <article class="info-card"><span>✺</span><div><h3>నక్షత్రం</h3><p>పంచాంగ API / గణన జోడించాలి</p></div></article>
-        <article class="info-card"><span>◷</span><div><h3>రాహుకాలం</h3><p>స్థానిక సూర్యోదయంతో గణించాలి</p></div></article>
-        <article class="info-card"><span>✧</span><div><h3>శుభ సమయాలు</h3><p>స్థానిక పంచాంగాన్ని నిర్ధారించండి</p></div></article>
+        <article class="info-card"><span>✦</span><div><h3>తిథి</h3><p>పంచాంగ గణన అవసరం</p></div></article>
+        <article class="info-card"><span>✺</span><div><h3>నక్షత్రం</h3><p>పంచాంగ గణన అవసరం</p></div></article>
       </div>
     </section>
 
-    <section class="section" id="muhurthas"><div class="section-heading"><div><p class="eyebrow">శుభ సమయాలు</p><h2>నేటి శుభ ముహూర్తాలు</h2></div></div><div class="muhurta-list"><div><span>☀</span><b>బ్రహ్మ ముహూర్తం</b><time>04:51 AM – 05:43 AM</time></div><div><span>✺</span><b>అభిజిత్ ముహూర్తం</b><time>11:48 AM – 12:36 PM</time></div><div><span>✺</span><b>విజయ ముహూర్తం</b><time>01:57 PM – 02:45 PM</time></div><div><span>☼</span><b>గోధూళి ముహూర్తం</b><time>04:20 PM – 05:08 PM</time></div><p class="notice">సమయాలు నమూనా ప్రదర్శన మాత్రమే; మీ నగరం మరియు తేదీకి అనుగుణంగా నిర్ధారించండి.</p></div></section><section class="section month-panel"><div class="month-head"><button id="prev-month" aria-label="గత నెల">‹</button><h2 id="month-label">అక్టోబర్ 2026</h2><button id="next-month" aria-label="తదుపరి నెల">›</button></div><div id="month-calendar" class="month-calendar"></div><a class="month-link" href="#festivals">▦ ఈ నెల పండుగలు & ముఖ్య తేదీలు　›</a></section></div><section class="section" id="festivals">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">మన సంప్రదాయాలు</p>
-          <h2>పండుగలు & ఆచారాలు</h2>
-        </div>
-      </div>
-      <div class="festival-card">
-        <span class="festival-icon">🪔</span>
-        <div><h3>పండుగల క్యాలెండర్</h3><p>ప్రాంతం మరియు సంవత్సరానికి సరిపోయే పండుగ తేదీల జాబితాను తరువాత జోడించవచ్చు.</p></div>
-      </div>
+    <section class="section deity-section">
+      <div class="weekday-banner"><span>✦</span><h2>వారం వారిగా ఆరాధ్య దేవతలు మరియు చిన్న స్తోత్రం</h2><a href="#deity-grid">వివరంగా చూడండి　›</a></div>
+      <div id="deity-grid" class="deity-grid"></div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-om">ॐ</div>
-    <p>సర్వే జనాః సుఖినో భవంతు</p>
-    <small>భక్తితో నిర్మించిన తెలుగు పంచాంగం</small>
-  </footer>
-
+  <footer><div class="footer-om">ॐ</div><p>సర్వే జనాః సుఖినో భవంతు</p><small>భక్తితో నిర్మించిన తెలుగు పంచాంగం</small></footer>
   <script src="app.js"></script>
 </body>
 </html>
