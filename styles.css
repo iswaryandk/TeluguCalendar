@@ -653,3 +653,95 @@ body {
   .deity-art .image-fallback { min-height:260px; }
   .deity-art::after { bottom:12px; }
 }
+
+
+/* Style 3 — cohesive traditional Indian calendar-art cards */
+.deity-section {
+  border:1px solid #d7b263;
+  border-radius:15px;
+  background:#fff9e9;
+  box-shadow:0 12px 30px rgba(89,38,25,.11);
+}
+.weekday-banner {
+  background:
+    radial-gradient(circle at 10% 50%,rgba(255,224,147,.16),transparent 24%),
+    linear-gradient(100deg,#4b1019,#84202c 48%,#4b1019);
+  border-bottom:3px solid #d7ad52;
+  padding:13px 17px;
+}
+.deity-grid {
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:11px;
+  padding:14px;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(239,207,137,.2),transparent 55%),
+    #fff9e9;
+}
+.deity-card {
+  border:1px solid #d6b365;
+  border-radius:11px;
+  overflow:hidden;
+  background:#fffdf6;
+  box-shadow:0 5px 14px rgba(78,32,24,.11);
+}
+.deity-card button { background:#fffdf6; }
+.deity-image-wrap {
+  height:156px;
+  padding:5px;
+  background:linear-gradient(145deg,#f8e3a8,#bd873b,#f8e3a8);
+}
+.deity-image-wrap::before { border-radius:7px; }
+.deity-card img {
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(255,245,208,.9);
+  border-radius:7px;
+  filter:saturate(1.15) contrast(1.04);
+}
+.deity-card-copy {
+  padding:10px 9px 11px;
+  gap:7px;
+  background:linear-gradient(180deg,#fffdf7,#fff1d0);
+}
+.deity-card .weekday {
+  align-self:flex-start;
+  padding:4px 8px;
+  border-radius:30px;
+  background:#f5e3b8;
+  border:1px solid #e4c77f;
+  color:#7a1b27;
+  font-size:.73rem;
+  font-weight:700;
+}
+.deity-card h3 {
+  min-height:2.9em;
+  display:flex;
+  align-items:center;
+  margin:0;
+  color:#711a26;
+  font-family:"Noto Serif Telugu",serif;
+  font-size:.93rem;
+  line-height:1.55;
+}
+.deity-card .short-prayer {
+  color:#59463d;
+  font-size:.79rem;
+  line-height:1.75;
+}
+.deity-card .select-hint {
+  margin-top:auto;
+  padding-top:8px;
+  border-top:1px dashed #d9bd7d;
+  color:#7b202b;
+  font-size:.72rem;
+}
+@media(max-width:1000px) {
+  .deity-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+@media(max-width:700px) {
+  .deity-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; padding:10px; }
+  .deity-image-wrap { height:145px; }
+  .deity-card-copy { padding:9px 8px; }
+  .deity-card h3 { font-size:.9rem; min-height:0; }
+}
