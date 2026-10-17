@@ -15,7 +15,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: radial-gradient(ellipse at 10% 0%, #fff1d2 0, transparent 32%), radial-gradient(ellipse at 100% 30%, #e3d8ff 0, transparent 38%), var(--cream); color: var(--ink); font-family: "Noto Sans Telugu", sans-serif; }
 .hero {
   min-height: 300px; display: grid; place-items: center; text-align: center; color: #fff7df; background-position: center 38%;
-  background: linear-gradient(110deg, rgba(38,25,67,.88), rgba(96,65,135,.58)), url("https://commons.wikimedia.org/wiki/Special:FilePath/LORD%20SHIVA.jpg") center 48%/cover;
+  background: radial-gradient(ellipse at 15% 30%, rgba(245,211,131,.28), transparent 28%), radial-gradient(ellipse at 85% 70%, rgba(226,195,255,.24), transparent 30%), linear-gradient(125deg, #211638 0%, #4c3474 48%, #7a4e8c 100%); position: relative;
   border-bottom: 5px solid var(--gold);
 }
 .hero-overlay { padding: 38px 18px; }
@@ -90,3 +90,14 @@ footer small { color: #e4cda1; }
   .deity-card h3 { font-size: .9rem; }
   .deity-copy { padding: 17px; }
 }
+
+/* Decorative, reliable devotional image treatment with graceful fallback if a remote image is unavailable. */
+.hero { isolation: isolate; }
+.hero::before { content: "✦  ॐ  ✦"; position: absolute; inset: 0; display: grid; place-items: center; font-size: clamp(4rem, 14vw, 10rem); color: rgba(255,226,157,.09); pointer-events: none; }
+.deity-image-wrap { height: 150px; position: relative; overflow: hidden; background: radial-gradient(circle at 50% 30%, #fff0be, #e3d4ff 62%, #bda4df); }
+.deity-image-wrap img { height: 100%; }
+.image-fallback { display: none; position: absolute; inset: 0; place-items: center; font-size: 4rem; color: #674287; background: radial-gradient(circle at 50% 38%, #fff4d1, #e9d8ff 64%, #c8b2e8); }
+.image-fallback.is-visible { display: grid; }
+.deity-art .image-fallback { font-size: 6rem; }
+.deity-card img { height: 100%; }
+@media (max-width: 480px) { .deity-image-wrap { height: 105px; } }
