@@ -221,3 +221,65 @@ footer { background:linear-gradient(90deg,#54101a,#9b202b,#54101a); }
  .deity-card img,.deity-image-wrap { height:110px; }
  .date-strip { padding:12px; }
 }
+
+
+/* QA correction: restore the requested temple-maroon, antique-gold and warm-ivory palette. */
+:root {
+  --maroon: #681923;
+  --maroon-2: #8d2934;
+  --gold: #c89a3c;
+  --gold-light: #f0d99a;
+  --cream: #fbf5e8;
+  --paper: #fffdf7;
+  --ink: #30231d;
+  --muted: #75675d;
+  --line: #ead9b5;
+  --shadow: 0 10px 28px rgba(83, 24, 29, .11);
+}
+body {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(236, 205, 135, .28), transparent 34%),
+    radial-gradient(ellipse at 100% 26%, rgba(160, 70, 56, .07), transparent 36%),
+    var(--cream);
+}
+.hero {
+  background:
+    linear-gradient(180deg, rgba(48, 10, 17, .48), rgba(48, 10, 17, .82)),
+    radial-gradient(ellipse at 50% 22%, #a64e32 0%, #75202b 46%, #351018 100%);
+  border-bottom: 6px solid var(--gold);
+}
+.hero::after {
+  content: "✧  ❋  ✧";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(240, 217, 154, .42);
+  outline: 1px solid rgba(240, 217, 154, .2);
+  outline-offset: 5px;
+  color: rgba(255, 225, 156, .42);
+  font-size: 1.15rem;
+  letter-spacing: .8rem;
+  text-align: center;
+  padding-top: 12px;
+  pointer-events: none;
+}
+.hero-overlay { position: relative; z-index: 1; }
+.nav { background: linear-gradient(90deg, #4a1019, #7b1e29 48%, #4a1019); border-bottom: 1px solid #b98736; }
+.nav a { border-radius: 5px; border-color: rgba(240, 217, 154, .36); }
+.nav a:hover, .nav a:focus { background: var(--gold-light); color: #50121b; }
+.date-strip { border-color: #dfc18a; background: linear-gradient(110deg, #fffdf6, #f8e8c2); }
+.section, .featured-deity, .info-card, .festival-card { border-color: var(--line); }
+.summary-tile { border-color: rgba(156, 105, 43, .24); }
+.summary-tile.pink { background: linear-gradient(145deg, #fff7f1, #f5d9d4); }
+.summary-tile.blue { background: linear-gradient(145deg, #fffaf0, #e9e0c5); }
+.summary-tile.green { background: linear-gradient(145deg, #fffaf0, #e4ead6); }
+.summary-tile.violet { background: linear-gradient(145deg, #fff8ed, #eee0c9); }
+.deity-copy .sanskrit { background: #fbf1da; border-left-color: var(--gold); }
+.notice { background: #fbf2df; border-color: #e6cf9e; }
+.deity-card { background: #fffdf7; }
+.deity-card:hover { box-shadow: 0 14px 28px rgba(83, 24, 29, .16); }
+.month-head button { color: var(--maroon); border-color: var(--gold); background: #fff8e8; }
+.month-calendar .today { background: var(--maroon); color: #fff7e2; }
+footer { background: linear-gradient(100deg, #3c0e15, #701a25, #3c0e15); }
+@media (max-width: 480px) {
+  .hero::after { inset: 8px; padding-top: 7px; font-size: .8rem; }
+}
