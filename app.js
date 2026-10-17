@@ -123,3 +123,28 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+/* Accessible month grid with reusable calendar renderer. */
+const monthNamesTe = ["జనవరి","ఫిబ్రవరి","మార్చి","ఏప్రిల్","మే","జూన్","జూలై","ఆగస్టు","సెప్టెంబర్","అక్టోబర్","నవంబర్","డిసెంబర్"];
+const weekdayShortTe = ["ఆది","సోమ","మంగళ","బుధ","గురు","శుక్ర","శని"];
+let calendarMonth = new Date();
+function renderMonthCalendar() {
+  const grid = document.getElementById("month-calendar");
+  const label = document.getElementById("month-label");
+  if (!grid || !label) return;
+  label.textContent = monthNamesTe[calendarMonth.getMonth()] + " " + calendarMonth.getFullYear();
+  grid.innerHTML = "";
+  weekdayShortTe.forEach(day => { const cell=document.createElement("span"); cell.className="weekday-head"; cell.textContent=day; grid.append(cell); });
+  const first = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth(), 1).getDay();
+  const total = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth()+1, 0).getDate();
+  for(let i=0;i<first;i++){const blank=document.createElement("span");blank.setAttribute("aria-hidden","true");grid.append(blank);}
+  const now = new Date();
+  for(let day=1;day<=total;day++){
+    const cell=document.createElement("span"); cell.textContent=String(day);
+    if(day===now.getDate() && calendarMonth.getMonth()===now.getMonth() && calendarMonth.getFullYear()===now.getFullYear()) { cell.className="today"; cell.setAttribute("aria-current","date"); }
+    grid.append(cell);
+  }
+}
+document.getElementById("prev-month")?.addEventListener("click",()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()-1,1);renderMonthCalendar();});
+document.getElementById("next-month")?.addEventListener("click",()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,1);renderMonthCalendar();});
+document.addEventListener("DOMContentLoaded",renderMonthCalendar);
