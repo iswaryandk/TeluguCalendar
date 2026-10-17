@@ -533,3 +533,38 @@ footer { margin-top:14px;background:linear-gradient(90deg,#4b1018,#7a1a26,#4b101
   .summary-copy strong { font-size:.84rem; }
   .summary-copy small { font-size:.64rem; }
 }
+
+
+/* Fresh temple-inspired background: warm ivory, saffron glow and subtle rangoli-like ornament */
+:root {
+  --maroon:#741824;
+  --maroon-2:#9b2935;
+  --gold:#d5a64a;
+  --gold-light:#f3dfaa;
+  --cream:#fff8e9;
+  --paper:#fffdf7;
+  --ink:#392d2b;
+  --muted:#78665e;
+  --line:#ead7ad;
+  --shadow:0 12px 32px rgba(95,45,28,.10);
+}
+body {
+  background-color:#fff8e9;
+  background-image:
+    radial-gradient(ellipse at 8% 12%,rgba(241,193,102,.23),transparent 28%),
+    radial-gradient(ellipse at 93% 34%,rgba(192,111,76,.13),transparent 30%),
+    radial-gradient(ellipse at 48% 90%,rgba(228,190,112,.17),transparent 34%),
+    repeating-linear-gradient(135deg,rgba(142,89,37,.025) 0 1px,transparent 1px 14px);
+  color:var(--ink);
+}
+.hero {
+  background-image:
+    linear-gradient(90deg,rgba(48,13,23,.68),rgba(67,20,28,.32) 48%,rgba(48,13,23,.62)),
+    linear-gradient(180deg,rgba(32,12,19,.12),rgba(32,12,19,.45)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Lord%20Venkateswara%20swamy.jpg");
+  background-size:cover;
+  background-position:center 38%;
+  background-repeat:no-repeat;
+}
+.nav { background:linear-gradient(90deg,#4d101a,#7b1b28 48%,#4d101a); }
+.section,.date-strip { backdrop-filter:blur(2px); }
