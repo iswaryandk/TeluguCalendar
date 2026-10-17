@@ -23,3 +23,4 @@ Open `index.html` in a browser, or use a local static server.
 - Replace the sample external images with appropriately licensed images stored in the repository. The image links are illustrative and may not correspond to the exact deity shown.
 - Verify every stotram and Telugu spelling with a trusted source or knowledgeable reader before public release.
 - This starter uses no framework or build step; it can be hosted as a static GitHub Pages site.
+
