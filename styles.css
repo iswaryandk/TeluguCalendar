@@ -788,3 +788,21 @@ body {
   .panchang-detail .info-card h3 { font-size:1rem; }
   .panchang-detail .info-card p { font-size:.9rem; }
 }
+
+
+/* Fine-tune Panchangam typography to a compact, balanced size */
+.summary-copy .mini-label { font-size:.72rem; line-height:1.45; }
+.summary-copy h3 { font-size:1rem; line-height:1.45; }
+.summary-copy strong { font-size:.94rem; line-height:1.5; }
+.summary-copy small { font-size:.68rem; line-height:1.5; }
+.panchang-detail .info-card h3 { font-size:.98rem; line-height:1.5; }
+.panchang-detail .info-card p { font-size:.86rem; line-height:1.6; }
+.panchang-detail .notice { font-size:.82rem; line-height:1.7; }
+@media(max-width:700px) {
+  .summary-copy .mini-label { font-size:.68rem; }
+  .summary-copy h3 { font-size:.94rem; }
+  .summary-copy strong { font-size:.88rem; line-height:1.45; }
+  .summary-copy small { font-size:.64rem; line-height:1.5; }
+  .panchang-detail .info-card h3 { font-size:.92rem; }
+  .panchang-detail .info-card p { font-size:.82rem; }
+}
