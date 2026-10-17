@@ -2,7 +2,7 @@
 const deities = [
   {
     day: 1, weekday: "సోమవారం", god: "శ్రీ పరమశివుడు", shortName: "శివుడు",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lord%20shiva%F0%9F%99%8C.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/LORD%20SHIVA.jpg",
     alt: "శివుని భక్తి చిత్రానికి ప్రతినిధి చిత్రం",
     stotram: "ఓం నమః శివాయ।\nకర్పూరగౌరం కరుణావతారం\nసంసారసారం భుజగేంద్రహారం॥",
     meaning: "శివుని కరుణ, శాంతి, మంగళాన్ని స్మరించే ప్రార్థన."
@@ -23,7 +23,7 @@ const deities = [
   },
   {
     day: 4, weekday: "గురువారం", god: "శ్రీ దక్షిణామూర్తి", shortName: "దక్షిణామూర్తి",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lord%20Shiva%20Statue.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lord%20Shiva%20statue.jpg",
     alt: "దేవాలయ దీపాల భక్తి దృశ్యం",
     stotram: "గురుర్బ్రహ్మా గురుర్విష్ణుః\nగురుర్దేవో మహేశ్వరః।\nగురుః సాక్షాత్ పరబ్రహ్మ\nతస్మై శ్రీ గురవే నమః॥",
     meaning: "జ్ఞానాన్ని ప్రసాదించే గురువుకు నమస్కారం."
