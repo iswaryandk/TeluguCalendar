@@ -489,3 +489,47 @@ footer { margin-top:14px;background:linear-gradient(90deg,#4b1018,#7a1a26,#4b101
   .panchang-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .section { border-radius:10px; }
 }
+
+
+/* Illustrated, colourful Panchangam summary cards */
+.panchang-summary { gap:14px; margin:16px 0 18px; }
+.summary-tile {
+  display:grid; grid-template-columns:94px minmax(0,1fr); align-items:center;
+  gap:12px; min-height:142px; padding:12px; border:1px solid transparent;
+  border-radius:15px; overflow:hidden; box-shadow:0 7px 18px rgba(83,38,34,.08);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.summary-tile:hover { transform:translateY(-3px); box-shadow:0 12px 24px rgba(83,38,34,.14); }
+.summary-tile.pink { background:linear-gradient(135deg,#fff2f1,#f7d9dc); border-color:#e8b9c0; }
+.summary-tile.blue { background:linear-gradient(135deg,#edf8ff,#d5e9fa); border-color:#b7d5ed; }
+.summary-tile.green { background:linear-gradient(135deg,#f4fae9,#dceccf); border-color:#c8dcb6; }
+.summary-tile.violet { background:linear-gradient(135deg,#fbf0ff,#e9d8f7); border-color:#d8bee8; }
+.summary-art { height:112px; border-radius:12px; position:relative; display:grid; place-items:center; overflow:hidden; box-shadow:inset 0 0 0 2px rgba(255,255,255,.58),0 4px 12px rgba(70,30,40,.13); }
+.summary-art span { font-size:3.35rem; z-index:1; filter:drop-shadow(0 4px 5px rgba(45,20,35,.18)); }
+.summary-art i,.summary-art b { position:absolute; color:#fff6c7; text-shadow:0 1px 8px rgba(70,30,50,.45); font-style:normal; }
+.summary-art i { top:12px; right:14px; font-size:1.35rem; }
+.summary-art b { bottom:9px; left:13px; font-size:1.35rem; }
+.moon-art { background:radial-gradient(circle at 68% 26%,#fdf5d8 0 7%,transparent 8%),linear-gradient(145deg,#a94c72,#563c7c); }
+.star-art { background:radial-gradient(circle at 30% 25%,#fff 0 1px,transparent 2px),radial-gradient(circle at 72% 70%,#fff 0 1px,transparent 2px),linear-gradient(145deg,#1d477e,#5b64a5); }
+.sun-art { background:linear-gradient(180deg,#f7a85c 0%,#f8d18c 48%,#5c9b9a 49%,#32736f 100%); }
+.kalasha-art { background:radial-gradient(circle at 50% 30%,#ffeeb4 0 8%,transparent 9%),linear-gradient(145deg,#a94e35,#6b2442); }
+.summary-copy { min-width:0; text-align:left; }
+.summary-copy .mini-label { display:inline-block; color:#795a49; font-size:.7rem; margin-bottom:2px; }
+.summary-copy h3 { color:#741824; font-size:1rem; margin:0 0 3px; }
+.summary-copy strong { display:block; color:#3e3440; font-size:.93rem; line-height:1.55; }
+.summary-copy small { display:block; color:#75665f; font-size:.68rem; line-height:1.55; margin-top:4px; }
+.panchang-detail .info-card { position:relative; overflow:hidden; }
+.panchang-detail .info-card > span { width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#8d2330,#bd7b2c);color:#fff0bc;font-size:1.7rem;box-shadow:0 4px 10px #7a1a2520; }
+.panchang-detail .info-card:nth-child(2) > span { background:linear-gradient(145deg,#376b91,#4b9aa2); }
+.panchang-detail .info-card:nth-child(3) > span { background:linear-gradient(145deg,#8a4b7c,#c26c8e); }
+.panchang-detail .info-card:nth-child(4) > span { background:linear-gradient(145deg,#54713c,#a5a943); }
+@media(max-width:700px) {
+  .panchang-summary { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .summary-tile { grid-template-columns:1fr; gap:6px; padding:8px; min-height:0; text-align:center; }
+  .summary-art { height:94px; }
+  .summary-art span { font-size:2.8rem; }
+  .summary-copy { text-align:center; }
+  .summary-copy h3 { font-size:.9rem; }
+  .summary-copy strong { font-size:.84rem; }
+  .summary-copy small { font-size:.64rem; }
+}
