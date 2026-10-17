@@ -326,3 +326,166 @@ footer { background: linear-gradient(100deg, #3c0e15, #701a25, #3c0e15); }
   .muhurta-list time { margin-left: auto; }
   .month-head h2 { font-size: 1.05rem; }
 }
+
+
+/* Reference-match redesign: ornate maroon/gold dashboard, compact paired panels, responsive cards. */
+:root {
+  --maroon:#751b27; --maroon-2:#982d37; --gold:#d4a23c; --gold-light:#f8e5aa;
+  --cream:#fff7e8; --paper:#fffdf7; --ink:#32251e; --muted:#887566; --line:#e8cf9a;
+  --shadow:0 7px 20px rgba(92,36,25,.12);
+}
+body {
+  color:var(--ink);
+  background:
+    radial-gradient(ellipse at 0 0,rgba(229,174,73,.16),transparent 30%),
+    linear-gradient(90deg,rgba(186,129,47,.06),transparent 12%,transparent 88%,rgba(186,129,47,.06)),
+    #fff7e8;
+}
+.hero {
+  min-height:205px;
+  background:
+    linear-gradient(90deg,rgba(48,12,18,.25),rgba(48,12,18,.08) 40%,rgba(48,12,18,.55)),
+    linear-gradient(180deg,rgba(57,10,15,.06),rgba(57,10,15,.78)),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Lord%20Venkateswara%20swamy.jpg") center 34%/cover,
+    linear-gradient(115deg,#2c1417,#8e4828 48%,#351015);
+  border-bottom:5px solid var(--gold);
+}
+.hero::before { content:""; background:linear-gradient(90deg,rgba(70,12,19,.15),rgba(70,12,19,.55)); position:absolute; inset:0; opacity:1; }
+.hero::after { content:""; position:absolute; inset:9px; border:1px solid rgba(245,210,123,.45); outline:1px solid rgba(245,210,123,.2); outline-offset:4px; pointer-events:none; }
+.hero-overlay { position:relative; z-index:1; padding:32px 18px; text-shadow:0 2px 8px rgba(0,0,0,.5); }
+.hero .eyebrow { color:#f4d581; }
+.hero h1 { color:#ffe39a; text-shadow:0 2px 10px #411017; }
+.hero-subtitle { color:#fff9e9; }
+.nav { background:linear-gradient(90deg,#4c1119,#851f2b 50%,#4c1119); border-bottom:1px solid #c89736; gap:5px; }
+.nav a { border-radius:5px; border-color:rgba(248,222,157,.35); padding:8px 12px; }
+.nav a:first-child { background:#f4d27c;color:#5d151e;font-weight:700; }
+.container { width:min(1180px,calc(100% - 28px)); margin:14px auto 28px; }
+.date-strip {
+  display:grid;grid-template-columns:54px 1fr 1px minmax(180px,.45fr);gap:15px;align-items:center;
+  padding:14px 18px;border:1px solid #e4c27b;border-radius:12px;
+  background:linear-gradient(110deg,#fffdf6,#ffedc4);box-shadow:var(--shadow);
+}
+.date-symbol { display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:#7b1b27;color:#ffe7a6;font-size:1.65rem; }
+.date-main .eyebrow { margin-bottom:2px; }
+.date-strip h2 { margin:0;color:var(--maroon);font-size:1.35rem; }
+.date-strip .muted { margin:3px 0 0; }
+.date-divider { height:52px;background:#d9b66b; }
+.daily-blessing { display:flex;align-items:center;justify-content:center;gap:12px;color:var(--maroon); }
+.daily-blessing .lotus { color:#c58c25;font-size:2.6rem; }
+.daily-blessing strong,.daily-blessing small { display:block; }
+.daily-blessing strong { font-family:"Noto Serif Telugu",serif;font-size:1.2rem; }
+.daily-blessing small { color:var(--muted);margin-top:3px; }
+.panchang-summary { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 14px; }
+.summary-tile { min-height:116px;padding:10px 8px;border-radius:10px;gap:4px;justify-content:center; }
+.summary-tile.pink { background:linear-gradient(145deg,#fff4f0,#f6dfdb);border-color:#e8bcb6; }
+.summary-tile.blue { background:linear-gradient(145deg,#f1f9ff,#dfedf8);border-color:#b6d4e9; }
+.summary-tile.green { background:linear-gradient(145deg,#f6faed,#e4ecd6);border-color:#c8d7b6; }
+.summary-tile.violet { background:linear-gradient(145deg,#fbf3ff,#eee0f5);border-color:#d9c1e3; }
+.round-icon { width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#9d2d38,#65131f);color:#ffe9ad;border:2px solid #d9aa4b;font-size:1.35rem;box-shadow:0 2px 7px #5d172322; }
+.summary-tile h3 { font-size:.9rem;color:#9a6c2c; }
+.summary-tile strong { color:#651a24;font-size:1.06rem; }
+.summary-tile small { color:#887466; }
+.dashboard-grid { display:grid;grid-template-columns:1.04fr .96fr;gap:12px;align-items:stretch;margin-top:0; }
+.dashboard-grid > .section { margin-top:0; }
+.section { padding:0;border-radius:12px;overflow:hidden;background:#fffdf7;border:1px solid #e7d1a4;box-shadow:var(--shadow); }
+.panel-title { display:flex;align-items:center;gap:10px;padding:10px 15px;color:#fff7df;min-height:42px; }
+.panel-title > span { font-size:1.35rem;color:#ffdf8a; }
+.panel-title h2 { margin:0;font-size:1.05rem;color:inherit; }
+.maroon-title { background:linear-gradient(90deg,#791a27,#a52b35 65%,#761722); }
+.gold-title { background:linear-gradient(90deg,#a46c14,#d5a12f 68%,#9b6515); }
+.green-title { background:linear-gradient(90deg,#174f32,#267548 70%,#15452a); }
+.featured-inner { padding:12px; }
+.featured-deity { display:grid;grid-template-columns:minmax(160px,.88fr) 1fr;gap:14px;border:0;border-radius:0;box-shadow:none;background:transparent;overflow:visible; }
+.deity-art { min-height:0;align-self:stretch;border:2px solid #d4a348;border-radius:8px;background:#f5dfad;overflow:hidden; }
+.deity-art img { width:100%;height:100%;min-height:300px;max-height:390px;object-fit:cover; }
+.deity-art .image-fallback { min-height:300px; }
+.deity-copy { padding:6px 2px; }
+.deity-copy h3 { font-size:1.35rem;color:#761b27;line-height:1.5; }
+.deity-copy .eyebrow { color:#b27b2b; }
+.deity-copy .sanskrit { background:#fbf0d5;border-left:4px solid #d0a03b;border-radius:7px;padding:12px;font-size:1rem;line-height:2; }
+.deity-copy .meaning { font-size:.88rem;line-height:1.8; }
+.muhurta-list { padding:8px 14px 13px; }
+.muhurta-list > div { display:grid;grid-template-columns:24px minmax(100px,1fr) auto;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid #f0e3c7; }
+.muhurta-list > div > span { color:#d49a2b;font-size:1.15rem; }
+.muhurta-list b { font-size:.9rem;font-weight:600; }
+.muhurta-list time { font-size:.84rem;color:#455b83;white-space:nowrap; }
+.muhurta-list .notice { margin-top:10px; }
+.month-panel { align-self:start; }
+.month-title { justify-content:space-between; }
+.month-title button { width:30px;height:28px;border:0;background:transparent;color:#ffdf8a;font-size:1.8rem;line-height:1;cursor:pointer; }
+.month-calendar { display:grid;grid-template-columns:repeat(7,minmax(0,1fr));padding:8px 10px 0;border:0; }
+.month-calendar > span { min-height:35px;display:grid;place-items:center;border:0;border-bottom:1px solid #f0e5d1;background:#fffdf7;padding:5px 2px;font-size:.87rem; }
+.month-calendar .weekday-head { background:#fff4d9;color:#701b27;font-weight:700;border-bottom:1px solid #e4c780; }
+.month-calendar .today { width:34px;height:34px;min-height:34px;justify-self:center;align-self:center;background:#d8a02c;color:white;border-radius:50%;font-weight:700; }
+.month-link { display:block;text-align:center;margin:10px;padding:10px;border:1px solid #d9ad54;border-radius:8px;background:#fff4d8;color:#741b27;text-decoration:none;font-weight:700; }
+.right-lower { display:grid;gap:12px;align-content:start; }
+.festival-rows { padding:7px 12px 12px; }
+.festival-rows > div { display:grid;grid-template-columns:24px 95px 1fr 15px;gap:8px;align-items:center;padding:10px 4px;border-bottom:1px solid #efe2c8;font-size:.85rem; }
+.festival-rows time { color:#735b4a;white-space:nowrap; }
+.festival-rows > div > span:last-child { color:#6b3b2c; }
+.festival-rows .festival-today { background:#ffefd0;border-radius:8px;color:#7a1a25; }
+.quote-content { display:flex;align-items:center;gap:16px;padding:14px 18px;background:#fff9eb; }
+.quote-content > span { color:#c9952e;font-size:2.4rem; }
+.quote-content p { margin:0;color:#304b70;line-height:1.9; }
+.panchang-detail { margin-top:12px; padding:16px; }
+.panchang-detail .section-heading { margin-bottom:10px; }
+.panchang-detail .section-heading h2 { color:var(--maroon); }
+.panchang-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.info-card { border-color:#eeddb9;border-radius:9px;background:#fffdf8;box-shadow:none; }
+.deity-section { margin-top:12px; }
+.weekday-banner { display:flex;align-items:center;gap:12px;padding:10px 16px;background:linear-gradient(90deg,#65131e,#9b2430,#65131e);color:#ffdf8a;border-bottom:3px solid #d6a442; }
+.weekday-banner h2 { margin:0;font-size:1.05rem;flex:1;color:inherit; }
+.weekday-banner > span { font-size:1.5rem; }
+.weekday-banner a { color:#fff2cc;border:1px solid #d6a442;border-radius:18px;padding:5px 12px;text-decoration:none;font-size:.8rem;white-space:nowrap; }
+.deity-grid { grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding:12px;background:#fff8e9; }
+.deity-card { border-color:#e5c780;border-radius:8px;background:#fffdf8;box-shadow:none; }
+.deity-card img,.deity-image-wrap { height:135px; }
+.deity-card-copy { padding:9px;gap:5px; }
+.deity-card h3 { font-size:.91rem;line-height:1.5; }
+.deity-card .short-prayer { color:#435a7d;line-height:1.6;font-size:.78rem; }
+.select-hint { display:inline-block;background:#fff0c5;border-radius:20px;padding:7px 5px;text-align:center;color:#7c2930;font-size:.72rem; }
+footer { margin-top:14px;background:linear-gradient(90deg,#4b1018,#7a1a26,#4b1018);border-top:4px solid #d3a344;color:#ffebbd; }
+@media(max-width:900px) {
+  .container { width:calc(100% - 22px); }
+  .dashboard-grid { grid-template-columns:1fr 1fr; }
+  .featured-panel { grid-column:1 / -1; }
+  .featured-deity { grid-template-columns:minmax(190px,.8fr) 1fr; }
+  .muhurta-panel { grid-column:1 / -1; }
+  .month-panel,.right-lower { grid-column:1 / -1; }
+  .deity-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+@media(max-width:560px) {
+  .hero { min-height:190px; }
+  .hero-overlay { padding:30px 14px; }
+  .hero h1 { font-size:clamp(1.7rem,7vw,2.3rem); }
+  .nav { justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap; }
+  .nav a { flex:0 0 auto;white-space:nowrap;padding:8px 10px;font-size:.8rem; }
+  .container { width:calc(100% - 18px);margin:10px auto 20px; }
+  .date-strip { grid-template-columns:42px 1fr;gap:10px;padding:12px; }
+  .date-symbol { width:40px;height:40px;font-size:1.35rem; }
+  .date-strip h2 { font-size:1.05rem; }
+  .date-divider { display:none; }
+  .daily-blessing { grid-column:1/-1;border-top:1px solid #e7d1a4;padding-top:8px;justify-content:flex-start; }
+  .daily-blessing .lotus { font-size:1.8rem; }
+  .daily-blessing strong { font-size:1rem; }
+  .panchang-summary { grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:9px 0 11px; }
+  .summary-tile { min-height:112px;padding:8px 5px; }
+  .summary-tile small { font-size:.68rem; }
+  .dashboard-grid { grid-template-columns:1fr;gap:11px; }
+  .featured-panel,.muhurta-panel,.month-panel,.right-lower { grid-column:auto; }
+  .featured-deity { grid-template-columns:1fr;gap:10px; }
+  .deity-art img { height:280px;min-height:0;max-height:340px; }
+  .deity-copy { padding:4px 2px 8px; }
+  .deity-copy h3 { font-size:1.2rem; }
+  .muhurta-list > div { grid-template-columns:22px minmax(0,1fr);gap:5px;padding:9px 0; }
+  .muhurta-list time { grid-column:2;white-space:normal; }
+  .festival-rows > div { grid-template-columns:22px 78px 1fr 12px;gap:5px;font-size:.78rem; }
+  .deity-grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:9px; }
+  .deity-card img,.deity-image-wrap { height:125px; }
+  .deity-card-copy { padding:8px; }
+  .weekday-banner { flex-wrap:wrap; }
+  .weekday-banner h2 { font-size:.92rem; }
+  .weekday-banner a { margin-left:auto; }
+  .panchang-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .section { border-radius:10px; }
+}
