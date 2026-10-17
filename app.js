@@ -37,7 +37,7 @@ const deities = [
   },
   {
     day: 6, weekday: "శనివారం", god: "శ్రీ వేంకటేశ్వర స్వామి", shortName: "వేంకటేశ్వరుడు",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lord%20Venkateswara%20swamy.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lord-venkateshwara.jpg",
     alt: "శ్రీ వేంకటేశ్వర స్వామి చిత్రం", symbol: "🙏",
     stotram: "శ్రియః కాంతాయ కళ్యాణనిధయే నిధయేర్థినామ్।\nశ్రీవేంకటనివాసాయ శ్రీనివాసాయ మంగళమ్॥",
     meaning: "శ్రీనివాసునికి మంగళం కలగాలని సమర్పించే శ్లోకం."
