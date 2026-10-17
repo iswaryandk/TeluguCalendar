@@ -2,35 +2,35 @@
 const deities = [
   {
     day: 1, weekday: "సోమవారం", god: "శ్రీ పరమశివుడు", shortName: "శివుడు",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/072%20Siva%20Mahadeva%2C%20Unknown%2C%2012-13th%20c%20%2823463857676%29.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shiva_statue_in_Murudeshwar.jpg",
     alt: "శ్రీ పరమశివుని చిత్రం", symbol: "🔱",
     stotram: "ఓం నమః శివాయ।\nకర్పూరగౌరం కరుణావతారం\nసంసారసారం భుజగేంద్రహారం॥",
     meaning: "శివుని కరుణ, శాంతి, మంగళాన్ని స్మరించే ప్రార్థన."
   },
   {
     day: 2, weekday: "మంగళవారం", god: "శ్రీ హనుమంతుడు", shortName: "హనుమంతుడు",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hanuman%20ji%20pooja.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hanuman.jpg",
     alt: "శ్రీ హనుమంతుని చిత్రం", symbol: "🙏",
     stotram: "మనోజవం మారుతతుల్యవేగం\nజితేంద్రియం బుద్ధిమతాం వరిష్ఠమ్।\nవాతాత్మజం వానరయూథముఖ్యం\nశ్రీరామదూతం శరణం ప్రపద్యే॥",
     meaning: "హనుమంతుని వేగం, జ్ఞానం, భక్తిని స్మరించే శ్లోకం."
   },
   {
     day: 3, weekday: "బుధవారం", god: "శ్రీ వినాయకుడు", shortName: "వినాయకుడు",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shreeganesha.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Ganesha.jpg",
     alt: "శ్రీ వినాయకుని చిత్రం", symbol: "🐘",
     stotram: "వక్రతుండ మహాకాయ\nసూర్యకోటి సమప్రభ।\nనిర్విఘ్నం కురు మే దేవ\nసర్వకార్యేషు సర్వదా॥",
     meaning: "ప్రారంభించే పనులు విఘ్నాలు లేకుండా సాగాలని చేసే ప్రార్థన."
   },
   {
     day: 4, weekday: "గురువారం", god: "శ్రీ దక్షిణామూర్తి", shortName: "దక్షిణామూర్తి",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/072%20Siva%20Mahadeva%2C%20Unknown%2C%2012-13th%20c%20%2823463857676%29.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Dakshinamurthy.jpg",
     alt: "శ్రీ దక్షిణామూర్తి చిత్రం", symbol: "🪷",
     stotram: "గురుర్బ్రహ్మా గురుర్విష్ణుః\nగురుర్దేవో మహేశ్వరః।\nగురుః సాక్షాత్ పరబ్రహ్మ\nతస్మై శ్రీ గురవే నమః॥",
     meaning: "జ్ఞానాన్ని ప్రసాదించే గురువుకు నమస్కారం."
   },
   {
     day: 5, weekday: "శుక్రవారం", god: "శ్రీ మహాలక్ష్మి", shortName: "మహాలక్ష్మి",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Shreelaxmi.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Lakshmi.jpg",
     alt: "శ్రీ మహాలక్ష్మి చిత్రం", symbol: "🪷",
     stotram: "నమస్తేస్తు మహామాయే\nశ్రీపీఠే సురపూజితే।\nశంఖచక్రగదాహస్తే\nమహాలక్ష్మి నమోస్తుతే॥",
     meaning: "శ్రేయస్సు, శాంతి, సమృద్ధి కోసం మహాలక్ష్మిని ప్రార్థించే శ్లోకం."
@@ -44,7 +44,7 @@ const deities = [
   },
   {
     day: 0, weekday: "ఆదివారం", god: "శ్రీ సూర్యనారాయణ స్వామి", shortName: "సూర్యనారాయణుడు",
-    image: "https://commons.wikimedia.org/wiki/Special:FilePath/%E0%A4%B8%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF%20%E0%A4%A6%E0%A5%87%E0%A4%B5%20%E0%A4%AE%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%BF%20%28Sun%20God%20Idol%29.webp",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Surya_statue.jpg",
     alt: "శ్రీ సూర్యనారాయణ స్వామి చిత్రం", symbol: "☀️",
     stotram: "జపాకుసుమసంకాశం\nకాశ్యపేయం మహాద్యుతిమ్।\nతమోఽరిం సర్వపాపఘ్నం\nప్రణతోఽస్మి దివాకరమ్॥",
     meaning: "ప్రకాశం, ఆరోగ్యం, శక్తిని ప్రసాదించే సూర్యునికి నమస్కారం."
