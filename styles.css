@@ -770,3 +770,21 @@ body {
 @media(max-width:700px) {
   .featured-panel .deity-art img { min-height:270px;max-height:390px; }
 }
+
+
+/* Improve readability of Tithi, Nakshatra, Yoga, Karana and Panchangam values */
+.summary-copy .mini-label { font-size:.82rem; line-height:1.5; }
+.summary-copy h3 { font-size:1.18rem; line-height:1.55; }
+.summary-copy strong { font-size:1.08rem; line-height:1.65; font-weight:700; }
+.summary-copy small { font-size:.78rem; line-height:1.65; }
+.panchang-detail .info-card h3 { font-size:1.08rem; line-height:1.6; }
+.panchang-detail .info-card p { font-size:.96rem; line-height:1.7; }
+.panchang-detail .notice { font-size:.9rem; line-height:1.8; }
+@media(max-width:700px) {
+  .summary-copy .mini-label { font-size:.78rem; }
+  .summary-copy h3 { font-size:1.05rem; }
+  .summary-copy strong { font-size:1rem; line-height:1.55; }
+  .summary-copy small { font-size:.72rem; line-height:1.6; }
+  .panchang-detail .info-card h3 { font-size:1rem; }
+  .panchang-detail .info-card p { font-size:.9rem; }
+}
