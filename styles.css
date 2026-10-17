@@ -1,0 +1,89 @@
+:root {
+  --maroon: #4b1420;
+  --maroon-2: #742735;
+  --gold: #d6a64d;
+  --gold-light: #f4dfaa;
+  --cream: #fff9ec;
+  --paper: #fffdf7;
+  --ink: #34231d;
+  --muted: #796b61;
+  --line: #ead9b7;
+  --shadow: 0 12px 32px rgba(75,20,32,.10);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Noto Sans Telugu", sans-serif; }
+.hero {
+  min-height: 260px; display: grid; place-items: center; text-align: center; color: #fff7df;
+  background: linear-gradient(110deg, rgba(45,14,22,.88), rgba(83,33,30,.54)), url("https://images.unsplash.com/photo-1604608672516-8eec042b6e49?auto=format&fit=crop&w=1800&q=85") center 48%/cover;
+  border-bottom: 5px solid var(--gold);
+}
+.hero-overlay { padding: 38px 18px; }
+.eyebrow { color: #a56d22; text-transform: uppercase; font-size: .8rem; letter-spacing: .06em; margin: 0 0 6px; }
+.hero .eyebrow { color: #f7d985; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-family: "Noto Serif Telugu", serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 12px; color: #ffe3a0; }
+.hero-subtitle { margin: 0; color: #fff8e7; }
+.nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; padding: 12px; background: var(--maroon); }
+.nav a { color: #fff3d0; text-decoration: none; padding: 9px 15px; border: 1px solid rgba(244,223,170,.28); border-radius: 999px; font-size: .92rem; }
+.nav a:hover, .nav a:focus { background: var(--gold); color: var(--maroon); }
+.container { width: min(1120px, calc(100% - 28px)); margin: 24px auto 48px; }
+.date-strip, .section, .featured-deity, .info-card, .festival-card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+.date-strip { display: flex; align-items: center; justify-content: space-between; padding: 22px 26px; background: linear-gradient(110deg,#fffdf7,#fff1ce); }
+.date-strip h2 { margin-bottom: 4px; color: var(--maroon); }
+.muted { color: var(--muted); margin-bottom: 0; }
+.om-mark { font-size: 3rem; color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 74px; height: 74px; display: grid; place-items: center; }
+.section { padding: 22px; margin-top: 24px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.section-heading h2 { color: var(--maroon); margin-bottom: 0; }
+.pill { background: #f8e8bf; color: var(--maroon); border-radius: 999px; padding: 8px 12px; font-size: .85rem; }
+.featured-deity { display: grid; grid-template-columns: minmax(180px, 300px) 1fr; overflow: hidden; }
+.deity-art { min-height: 260px; background: linear-gradient(145deg,#f2d28d,#fff6dd); display: grid; place-items: center; overflow: hidden; }
+.deity-art img { width: 100%; height: 100%; min-height: 260px; object-fit: cover; display: block; }
+.deity-copy { padding: 24px; }
+.deity-copy h3 { font-size: 1.5rem; color: var(--maroon); margin-bottom: 6px; }
+.deity-copy .sanskrit { font-family: "Noto Serif Telugu", serif; font-size: 1.18rem; line-height: 1.9; background: #fff7e3; border-left: 4px solid var(--gold); padding: 14px 16px; border-radius: 8px; white-space: pre-line; }
+.meaning { color: var(--muted); line-height: 1.8; }
+.deity-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.deity-card { border: 1px solid var(--line); border-radius: 14px; background: #fffaf0; overflow: hidden; display: flex; flex-direction: column; }
+.deity-card button { border: 0; background: transparent; cursor: pointer; color: inherit; font: inherit; text-align: left; padding: 0; height: 100%; display: flex; flex-direction: column; }
+.deity-card button:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+.deity-card img { width: 100%; height: 130px; object-fit: cover; background: #f1dfb9; }
+.deity-card-copy { padding: 12px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.deity-card h3 { font-size: 1rem; color: var(--maroon); margin: 0; }
+.deity-card .weekday { color: #a16b20; font-size: .8rem; }
+.deity-card .short-prayer { font-size: .87rem; line-height: 1.7; }
+.select-hint { font-size: .78rem; color: #8b6b38; margin-top: auto; padding-top: 7px; }
+.panchang-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.info-card { display: flex; gap: 14px; align-items: center; padding: 16px; box-shadow: none; }
+.info-card > span { color: #c58b2d; font-size: 1.8rem; }
+.info-card h3 { color: var(--maroon); margin-bottom: 4px; font-size: 1rem; }
+.info-card p { margin: 0; font-size: .85rem; color: var(--muted); line-height: 1.6; }
+.notice { background: #fff3d7; border: 1px solid #efd08c; padding: 13px 15px; border-radius: 10px; line-height: 1.8; font-size: .9rem; }
+.festival-card { display: flex; align-items: center; gap: 16px; padding: 18px; box-shadow: none; }
+.festival-icon { font-size: 2rem; }
+.festival-card h3 { color: var(--maroon); margin-bottom: 5px; }
+.festival-card p { color: var(--muted); margin: 0; line-height: 1.7; }
+footer { text-align: center; background: var(--maroon); color: #fff1ca; padding: 28px 16px; border-top: 4px solid var(--gold); }
+.footer-om { color: var(--gold); font-size: 2rem; }
+footer p { margin: 5px 0; }
+footer small { color: #e4cda1; }
+@media (max-width: 800px) {
+  .deity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .panchang-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured-deity { grid-template-columns: 1fr; }
+  .deity-art, .deity-art img { min-height: 220px; max-height: 300px; }
+}
+@media (max-width: 480px) {
+  .container { width: min(100% - 18px, 1120px); margin-top: 12px; }
+  .hero { min-height: 220px; }
+  .nav { gap: 6px; }
+  .nav a { padding: 8px 10px; font-size: .82rem; }
+  .date-strip, .section { padding: 16px; }
+  .om-mark { width: 54px; height: 54px; font-size: 2.2rem; }
+  .deity-grid, .panchang-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .deity-card img { height: 105px; }
+  .deity-card-copy { padding: 9px; }
+  .deity-card h3 { font-size: .9rem; }
+  .deity-copy { padding: 17px; }
+}
