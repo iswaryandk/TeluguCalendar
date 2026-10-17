@@ -69,7 +69,7 @@ function createDeityCard(deity) {
     <div class="deity-card-copy">
       <span class="weekday">${deity.weekday}</span>
       <h3>${deity.god}</h3>
-      <span class="short-prayer">${deity.stotram.split("\\n")[0]}</span>
+      <span class="short-prayer">${deity.stotram.split("\n")[0]}</span>
       <span class="select-hint">స్తోత్రం చూడటానికి తాకండి ↗</span>
     </div>`;
   button.addEventListener("click", () => renderFeatured(deity));
