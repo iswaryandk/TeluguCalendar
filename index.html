@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#4b1420" />
+  <meta name="theme-color" content="#7b1524" />
   <title>శ్రీ తెలుగు పంచాంగం</title>
   <meta name="description" content="తెలుగు పంచాంగం, వారానికి ఒక దేవత, చిన్న స్తోత్రాలు మరియు పండుగలు." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +37,12 @@
       <div class="om-mark" aria-hidden="true">ॐ</div>
     </section>
 
+    <section class="panchang-summary" aria-label="పంచాంగ సారాంశం">
+      <article class="summary-tile pink"><span class="round-icon">☾</span><h3>తిథి</h3><strong>శుక్ల పంచమి</strong><small>తిథి వివరాలు స్థానికంగా నిర్ధారించండి</small></article>
+      <article class="summary-tile blue"><span class="round-icon">✹</span><h3>నక్షత్రం</h3><strong>రోహిణి</strong><small>నక్షత్ర సమయం పంచాంగానుసారం</small></article>
+      <article class="summary-tile green"><span class="round-icon">☼</span><h3>యోగం</h3><strong>శోభన</strong><small>స్థానిక గణన అవసరం</small></article>
+      <article class="summary-tile violet"><span class="round-icon">◐</span><h3>కరణం</h3><strong>బవ</strong><small>తిథి ఆధారిత వివరాలు</small></article>
+    </section>
     <section id="daily-god" class="section">
       <div class="section-heading">
         <div>
@@ -58,7 +64,7 @@
       <div id="deity-grid" class="deity-grid"></div>
     </section>
 
-    <section class="section" id="panchangam">
+    <div class="dashboard-grid"><section class="section" id="panchangam">
       <div class="section-heading">
         <div>
           <p class="eyebrow">రోజువారీ వివరాలు</p>
@@ -76,7 +82,7 @@
       </div>
     </section>
 
-    <section class="section" id="festivals">
+    <section class="section" id="muhurthas"><div class="section-heading"><div><p class="eyebrow">శుభ సమయాలు</p><h2>నేటి శుభ ముహూర్తాలు</h2></div></div><div class="muhurta-list"><div><span>☀</span><b>బ్రహ్మ ముహూర్తం</b><time>04:51 AM – 05:43 AM</time></div><div><span>✺</span><b>అభిజిత్ ముహూర్తం</b><time>11:48 AM – 12:36 PM</time></div><div><span>✺</span><b>విజయ ముహూర్తం</b><time>01:57 PM – 02:45 PM</time></div><div><span>☼</span><b>గోధూళి ముహూర్తం</b><time>04:20 PM – 05:08 PM</time></div><p class="notice">సమయాలు నమూనా ప్రదర్శన మాత్రమే; మీ నగరం మరియు తేదీకి అనుగుణంగా నిర్ధారించండి.</p></div></section><section class="section month-panel"><div class="month-head"><button id="prev-month" aria-label="గత నెల">‹</button><h2 id="month-label">అక్టోబర్ 2026</h2><button id="next-month" aria-label="తదుపరి నెల">›</button></div><div id="month-calendar" class="month-calendar"></div><a class="month-link" href="#festivals">▦ ఈ నెల పండుగలు & ముఖ్య తేదీలు　›</a></section></div><section class="section" id="festivals">
       <div class="section-heading">
         <div>
           <p class="eyebrow">మన సంప్రదాయాలు</p>
