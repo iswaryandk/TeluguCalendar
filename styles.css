@@ -806,3 +806,19 @@ body {
   .panchang-detail .info-card h3 { font-size:.92rem; }
   .panchang-detail .info-card p { font-size:.82rem; }
 }
+
+
+/* Reduce devotional image footprints while keeping portraits clear and responsive */
+.featured-panel .deity-art img { height: clamp(190px, 28vw, 290px); min-height: 0; max-height: 290px; }
+.featured-panel .deity-art .image-fallback { min-height: 190px; }
+.deity-image-wrap { height: 112px; }
+@media (max-width: 1000px) {
+  .featured-panel .deity-art img { height: clamp(180px, 38vw, 250px); min-height: 0; max-height: 250px; }
+  .deity-image-wrap { height: 100px; }
+}
+@media (max-width: 560px) {
+  .featured-panel .deity-art { max-width: 100%; }
+  .featured-panel .deity-art img { height: 205px; min-height: 0; max-height: 205px; }
+  .featured-panel .deity-art .image-fallback { min-height: 205px; }
+  .deity-image-wrap { height: 88px; }
+}
