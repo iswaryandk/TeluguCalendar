@@ -138,3 +138,86 @@ footer { background: linear-gradient(90deg,#351728,#64364b,#351728); }
   .hero::before { height: 160px; opacity: .18; }
   .hero::after { font-size: 1.1rem; bottom: 8px; }
 }
+
+/* Reference-matched temple calendar dashboard */
+:root { --maroon:#801827; --maroon-2:#a62d34; --gold:#dca43a; --gold-light:#f8e3a4; --cream:#fff4d9; --paper:#fffdf6; --ink:#30264a; --muted:#786b65; --line:#e7c981; --shadow:0 5px 16px rgba(100,45,20,.12); }
+body { background:radial-gradient(ellipse at 50% 0%,#fffaf0,#f7e8c8 70%,#f3dcae); }
+.hero { min-height:205px; background:linear-gradient(90deg,rgba(35,17,39,.45),rgba(35,17,39,.68)),linear-gradient(180deg,#30203e 0%,#8b573d 55%,#e9b66d 100%); border-bottom:6px solid #dca43a; }
+.hero::before { width:min(620px,94vw); height:190px; opacity:.3; }
+.hero::after { bottom:7px; }
+.hero-overlay { padding:28px 16px 34px; }
+h1 { font-size:clamp(2rem,4.2vw,3.1rem); }
+.nav { background:linear-gradient(90deg,#5f101e,#951f2a,#5f101e); border-bottom:3px solid #dca43a; padding:9px 12px; gap:4px; }
+.nav a { border-radius:8px; padding:8px 12px; font-weight:600; }
+.container { width:min(1200px,calc(100% - 28px)); margin:14px auto 26px; }
+.date-strip { border-radius:12px; padding:14px 20px; border:1px solid #e9ce8b; background:linear-gradient(100deg,#fffaf0,#fffdf6); }
+.date-strip h2 { font-size:clamp(1.1rem,2.4vw,1.65rem); }
+.om-mark { background:#fff5d7; }
+.section { padding:15px; margin-top:14px; border-radius:12px; }
+.section-heading { margin-bottom:12px; }
+.section-heading h2 { font-size:1.25rem; }
+.featured-deity { border-radius:10px; border-color:#e3c47b; }
+.deity-art { min-height:250px; background:radial-gradient(circle,#ffe6a0,#7a251b); }
+.deity-art img { min-height:250px; }
+.deity-copy { padding:17px; }
+.deity-copy .sanskrit { font-size:1.03rem; background:#fff7e7; border-left-color:#a8252d; }
+.panchang-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.info-card { padding:12px; background:#fffdf6; border-radius:9px; }
+.info-card > span { color:#cb8122; }
+.festival-card { background:#fffdf6; }
+footer { background:linear-gradient(90deg,#54101a,#9b202b,#54101a); }
+.panchang-summary { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px; }
+.summary-tile { text-align:center; padding:12px 8px; border:1px solid;border-radius:10px; min-height:120px; display:flex; flex-direction:column; align-items:center; gap:4px; }
+.summary-tile h3,.summary-tile strong,.summary-tile small { margin:0; }
+.summary-tile h3 { font-size:.95rem; }
+.summary-tile strong { font-size:1.05rem; }
+.summary-tile small { font-size:.74rem; line-height:1.5; }
+.pink { background:#fff0ed; border-color:#edb7b1; color:#811d2b; }
+.blue { background:#edf7ff; border-color:#a8d3ef; color:#164d83; }
+.green { background:#f1f8e9; border-color:#c2d9ad; color:#335b2c; }
+.violet { background:#f8effa; border-color:#d7b7de; color:#713078; }
+.round-icon { display:grid; place-items:center; width:40px;height:40px;border-radius:50%;background:currentColor;color:white;font-size:1.35rem; }
+.dashboard-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:14px; align-items:start; margin-top:14px; }
+.dashboard-grid > .section { margin-top:0; }
+#muhurthas { background:linear-gradient(145deg,#fffdf5,#fff6e1); }
+.muhurta-list > div { display:grid; grid-template-columns:28px 1fr auto; gap:8px; align-items:center; padding:9px 4px; border-bottom:1px solid #f0e3c8; font-size:.88rem; }
+.muhurta-list > div span { color:#d58b1c; font-size:1.2rem; }
+.muhurta-list time { color:#263a67; font-variant-numeric:tabular-nums; }
+.month-panel { overflow:hidden; }
+.month-head { display:flex; align-items:center; justify-content:space-between; background:linear-gradient(90deg,#801827,#a62d34); color:#fff2c6; margin:-15px -15px 12px; padding:8px 14px; }
+.month-head h2 { margin:0; font-size:1.1rem; }
+.month-head button { color:inherit;background:transparent;border:0;font-size:1.8rem;cursor:pointer; }
+.month-calendar { display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid #eadfc9;border-left:1px solid #eadfc9; }
+.month-calendar > span { text-align:center;padding:8px 2px;border-right:1px solid #eadfc9;border-bottom:1px solid #eadfc9;font-size:.85rem;min-height:32px;background:#fffdf7; }
+.month-calendar .weekday-head { background:#fff5df;color:#7a1c29;font-weight:700; }
+.month-calendar .today { background:#e2a21f;color:white;border-radius:50%;font-weight:700; }
+.month-link { display:block;text-align:center;text-decoration:none;color:#7a1c29;background:#fff0c9;border:1px solid #e2b84f;border-radius:8px;padding:11px;margin-top:10px;font-weight:700; }
+.quote-panel { display:flex;align-items:center;justify-content:center;gap:18px;color:#263c68;padding:12px;text-align:center; }
+.quote-panel span { font-size:2.5rem;color:#c58a25; }
+.quote-panel p { margin:0; }
+.deity-strip-title { text-align:center;background:linear-gradient(90deg,#54101a,#9b202b,#54101a);color:#ffe49a;padding:12px;font-weight:700;border-top:4px solid #dca43a; }
+.deity-grid { grid-template-columns:repeat(7,minmax(0,1fr));gap:8px; }
+.deity-card { border-radius:9px;border-color:#e4c67d; }
+.deity-card img,.deity-image-wrap { height:125px; }
+.deity-card-copy { padding:9px; }
+.deity-card h3 { font-size:.9rem; }
+.short-prayer { color:#233b69; }
+.select-hint { background:#fff0c9;border-radius:20px;text-align:center;color:#7b1a27;padding:7px 3px;margin-top:4px; }
+@media(max-width:850px) {
+ .dashboard-grid { grid-template-columns:1fr; }
+ .deity-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .panchang-summary { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:480px) {
+ .hero { min-height:180px; }
+ .nav a { padding:7px 8px;font-size:.75rem; }
+ .container { width:calc(100% - 14px); }
+ .panchang-summary { gap:6px; }
+ .summary-tile { min-height:110px; }
+ .dashboard-grid { gap:10px; }
+ .muhurta-list > div { grid-template-columns:22px 1fr; }
+ .muhurta-list time { grid-column:2; }
+ .deity-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .deity-card img,.deity-image-wrap { height:110px; }
+ .date-strip { padding:12px; }
+}
