@@ -15,7 +15,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: radial-gradient(ellipse at 10% 0%, #fff1d2 0, transparent 32%), radial-gradient(ellipse at 100% 30%, #e3d8ff 0, transparent 38%), var(--cream); color: var(--ink); font-family: "Noto Sans Telugu", sans-serif; }
 .hero {
   min-height: 300px; display: grid; place-items: center; text-align: center; color: #fff7df; background-position: center 38%;
-  background: radial-gradient(ellipse at 15% 30%, rgba(245,211,131,.28), transparent 28%), radial-gradient(ellipse at 85% 70%, rgba(226,195,255,.24), transparent 30%), linear-gradient(125deg, #211638 0%, #4c3474 48%, #7a4e8c 100%); position: relative;
+  background: linear-gradient(180deg, rgba(34,18,43,.2), rgba(28,15,30,.68)), linear-gradient(125deg, #211638 0%, #4c3474 48%, #7a4e8c 100%); position: relative;
   border-bottom: 5px solid var(--gold);
 }
 .hero-overlay { padding: 38px 18px; }
@@ -101,3 +101,40 @@ footer small { color: #e4cda1; }
 .deity-art .image-fallback { font-size: 6rem; }
 .deity-card img { height: 100%; }
 @media (max-width: 480px) { .deity-image-wrap { height: 105px; } }
+
+/* Temple-inspired gopuram silhouette and festive lamps */
+.hero { overflow: hidden; }
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%; bottom: -2px; transform: translateX(-50%);
+  width: min(620px, 94vw); height: 230px;
+  opacity: .24; pointer-events: none;
+  background:
+    linear-gradient(#f8d985,#f8d985) 50% 100% / 72% 12px no-repeat,
+    linear-gradient(#f8d985,#f8d985) 50% 84% / 64% 12px no-repeat,
+    linear-gradient(#f8d985,#f8d985) 50% 68% / 54% 12px no-repeat,
+    linear-gradient(#f8d985,#f8d985) 50% 52% / 44% 12px no-repeat,
+    linear-gradient(#f8d985,#f8d985) 50% 36% / 34% 12px no-repeat,
+    linear-gradient(#f8d985,#f8d985) 50% 20% / 24% 12px no-repeat,
+    linear-gradient(90deg, transparent 0 25%, #f8d985 25% 75%, transparent 75%) 50% 100% / 100% 82% no-repeat;
+  clip-path: polygon(0 100%,0 87%,18% 87%,18% 72%,28% 72%,28% 57%,37% 57%,37% 42%,44% 42%,44% 24%,50% 0,56% 24%,56% 42%,63% 42%,63% 57%,72% 57%,72% 72%,82% 72%,82% 87%,100% 87%,100% 100%);
+}
+.hero::after {
+  content: "🪔  ✦  🪔";
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  color: #ffe5a1; font-size: 1.5rem; letter-spacing: .7rem;
+  opacity: .85; pointer-events: none; white-space: nowrap;
+}
+.hero-overlay { position: relative; z-index: 1; text-shadow: 0 2px 14px rgba(15,8,22,.65); }
+.nav { background: linear-gradient(90deg, #3b172b, #6a354f, #3b172b); }
+.date-strip { border-top: 3px solid #d5a64a; }
+.section { background: linear-gradient(145deg, #fffdf8, #fff7e9); border-color: #e7d4aa; }
+.deity-card { border-color: #e4c88d; }
+.deity-card img { background: linear-gradient(135deg,#f8e6b5,#e6d2aa); }
+.deity-copy .sanskrit { background: #fff7e8; border-left-color: #b9822c; }
+footer { background: linear-gradient(90deg,#351728,#64364b,#351728); }
+@media (max-width: 480px) {
+  .hero::before { height: 160px; opacity: .18; }
+  .hero::after { font-size: 1.1rem; bottom: 8px; }
+}
