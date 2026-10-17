@@ -568,3 +568,88 @@ body {
 }
 .nav { background:linear-gradient(90deg,#4d101a,#7b1b28 48%,#4d101a); }
 .section,.date-strip { backdrop-filter:blur(2px); }
+
+
+/* New deity portrait style: framed devotional artwork, warm halo and elegant captions */
+.deity-art {
+  position:relative;
+  min-height:0;
+  padding:8px;
+  border:0;
+  border-radius:14px;
+  background:
+    radial-gradient(ellipse at 50% 38%,#fff2c8 0%,#e9c77c 44%,#a45b36 100%);
+  box-shadow:inset 0 0 0 1px #f8e5b1;
+}
+.deity-art::before {
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(255,246,204,.9);
+  border-radius:10px;
+  pointer-events:none;
+  z-index:2;
+}
+.deity-art::after {
+  content:"✦  ॐ  ✦";
+  position:absolute;
+  left:50%;bottom:14px;transform:translateX(-50%);
+  padding:4px 12px;border:1px solid rgba(255,226,151,.8);
+  border-radius:30px;background:rgba(82,20,26,.78);
+  color:#ffe8a7;font-size:.9rem;letter-spacing:.08em;
+  text-shadow:none;z-index:3;white-space:nowrap;
+}
+.deity-art img {
+  display:block;width:100%;height:100%;min-height:300px;max-height:390px;
+  object-fit:contain;object-position:center;
+  border-radius:9px;
+  background:linear-gradient(160deg,#f9e8bd,#fff9e7 52%,#e8c67d);
+  filter:saturate(1.12) contrast(1.03);
+}
+.deity-art .image-fallback { min-height:300px; }
+.deity-copy { padding:8px 4px; }
+.deity-copy h3 {
+  padding-bottom:8px;
+  border-bottom:1px solid #e7cb8b;
+}
+.deity-copy .eyebrow {
+  display:inline-block;padding:5px 10px;border-radius:30px;
+  background:#fff0c8;color:#8c5421;font-weight:700;
+}
+.deity-copy .sanskrit {
+  border:1px solid #ead5a1;border-left:4px solid #bd8428;
+  background:linear-gradient(135deg,#fff8e7,#f8ebcb);
+  box-shadow:inset 0 1px 0 #fff;
+}
+.deity-image-wrap {
+  position:relative;overflow:hidden;
+  padding:5px;
+  background:linear-gradient(145deg,#f5d98e,#a95d32,#f0ce77);
+}
+.deity-image-wrap::before {
+  content:"";position:absolute;inset:5px;z-index:1;
+  border:1px solid rgba(255,244,198,.92);border-radius:8px;pointer-events:none;
+}
+.deity-card img {
+  display:block;width:100%;height:100%;object-fit:cover;
+  border-radius:8px;background:#fff2d1;
+  filter:saturate(1.12) contrast(1.04);
+  transition:transform .35s ease,filter .35s ease;
+}
+.deity-card:hover img { transform:scale(1.045);filter:saturate(1.22) contrast(1.06); }
+.deity-card { border:1px solid #d8b66b;box-shadow:0 5px 14px rgba(87,40,24,.12); }
+.deity-card-copy { background:linear-gradient(180deg,#fffdf7,#fff3d9); }
+.deity-card .weekday {
+  display:inline-flex;align-self:flex-start;
+  background:#f6e3b3;border:1px solid #e5c87e;
+  color:#7a2830;border-radius:30px;padding:3px 9px;
+}
+.deity-card h3 { color:#721925; }
+.deity-card .short-prayer { color:#584a43; }
+.select-hint { color:#7a202b;border-top:1px dashed #e1c783; }
+@media(max-width:700px) {
+  .deity-art { padding:6px; }
+  .deity-art img { min-height:260px;max-height:330px; }
+  .deity-art .image-fallback { min-height:260px; }
+  .deity-art::after { bottom:12px; }
+}
